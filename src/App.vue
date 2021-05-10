@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="app-container">
+    <main-screen></main-screen>
+    <about-screen></about-screen>
+    <service-list></service-list>
+    <contacts></contacts>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MainScreenView from "./views/MainScreenView"
+import AboutServiceView from "./views/AboutServiceView"
+import ServiceListview from './views/ServiceListView';
+import Contactsview from './views/ContactsView';
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    "main-screen": MainScreenView,
+    "about-screen": AboutServiceView,
+    "service-list": ServiceListview,
+    "contacts": Contactsview
+  },
+  data() {
+    return {
+    }
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='scss'>
+@import "styles/index.scss";
 </style>
